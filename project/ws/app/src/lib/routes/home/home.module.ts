@@ -6,7 +6,7 @@ import {
   PipeOrderByModule,
   PipeRelativeTimeModule,
   ImageCropModule,
-  PipeDurationTransformModule
+  PipeDurationTransformModule,
 } from '@sunbird-cb/utils'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatExpansionModule } from '@angular/material/expansion'
@@ -53,6 +53,7 @@ import { LoaderService } from './services/loader.service'
 import { AuthInitService } from './services/init.service'
 import { AllContentComponent } from './routes/my-content/components/all-content/all-content.component'
 import { MyContentService } from './routes/my-content/services/my-content.service'
+import { UserPopupComponent } from './routes/user-popup/user-popup'
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { MyContentService } from './routes/my-content/services/my-content.servic
     OpenRolesDialogComponent,
     EditDepartmentDialogComponent,
     CreateUserComponent,
+    UserPopupComponent,
   ],
   imports: [
     CommonModule,

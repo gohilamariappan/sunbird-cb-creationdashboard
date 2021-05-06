@@ -28,7 +28,6 @@ export class MyContentService {
       }))
   }
 
-
   fetchFromSearchV6(searchData: any, forAdmin = false): Observable<ISearchResult> {
     return this.apiService.post<ISearchResult>(
       forAdmin ? SEARCH_V6_ADMIN : SEARCH_V6_AUTH,
@@ -45,8 +44,6 @@ export class MyContentService {
       })
     )
   }
-
-
 
   getSearchBody(
     mode: string,

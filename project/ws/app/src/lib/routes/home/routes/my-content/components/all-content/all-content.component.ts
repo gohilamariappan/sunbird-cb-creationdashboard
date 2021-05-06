@@ -157,7 +157,7 @@ export class AllContentComponent implements OnInit, OnDestroy {
           defaultValue: 'Untitled Content',
           image: 'appIcon',
         },
-        { displayName: 'Kind', key: 'contentType', isList: false, prop: '', defaultValue: 'NA', },
+        { displayName: 'Kind', key: 'contentType', isList: false, prop: '', defaultValue: 'NA' },
         // { displayName: 'Active users', key: 'uniqueUsersCount', isList: false, prop: '', defaultValue: 0 },
         { displayName: 'Duration', key: 'duration', defaultValue: 0, pipe: PipeDurationTransformPipe },
       ], //  :> this will load from json
@@ -233,8 +233,6 @@ export class AllContentComponent implements OnInit, OnDestroy {
     return ['Draft']
   }
 
-
-
   fetchContent(loadMoreFlag: boolean, changeFilter = true) {
     const searchV6Data = this.myContSvc.getSearchBody(
       this.status,
@@ -278,7 +276,6 @@ export class AllContentComponent implements OnInit, OnDestroy {
         requestData.request.filters = { ...requestData.request.filters, [v.key]: v.value }
       })
     }
-
 
     this.loadService.changeLoad.next(true)
     const observable =
@@ -381,7 +378,6 @@ export class AllContentComponent implements OnInit, OnDestroy {
     this.fetchContent(false, false)
   }
 
-
   clearAllFilters() {
     this.finalFilters = defaultFilter
     this.searchInputElem.nativeElement.value = ''
@@ -396,7 +392,6 @@ export class AllContentComponent implements OnInit, OnDestroy {
     this.pagination.offset += 1
     this.fetchContent(true, false)
   }
-
 
   setCurrentLanguage(lang: string) {
     this.searchLanguage = lang

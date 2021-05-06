@@ -5,7 +5,7 @@ import { HomeComponent } from './routes/home/home.component'
 import {
   BtnPageBackModuleAdmin,
   LeftMenuModule, GroupCheckboxModule,
-  UIAdminTableModule, ScrollspyLeftMenuModule
+  UIAdminTableModule, ScrollspyLeftMenuModule,
 } from '@sunbird-cb/collection'
 import { HomeModule } from '../home/home.module'
 import { RouterModule } from '@angular/router'

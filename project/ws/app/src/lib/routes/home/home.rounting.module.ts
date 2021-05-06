@@ -60,7 +60,7 @@ const routes: Routes = [
           script: InitResolver,
           departmentData: DepartmentResolver, // comment for sunbird BE to work should be removed
         },
-      }
+      },
     ],
   },
 
