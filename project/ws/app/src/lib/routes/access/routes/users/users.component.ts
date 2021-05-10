@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { Router } from '@angular/router'
 import { UsersService } from '../../services/users.service'
 @Component({
-  selector: 'ws-app-users',
+  selector: 'ws-app-role-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
 })
@@ -18,7 +18,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   private defaultSideNavBarOpenedSubscription: any
 
   constructor(private usersSvc: UsersService, private router: Router
-    ,         public dialog: MatDialog) {
+    , public dialog: MatDialog) {
 
   }
   ngOnInit() {

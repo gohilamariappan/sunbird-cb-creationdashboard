@@ -54,6 +54,7 @@ import { AuthInitService } from './services/init.service'
 import { AllContentComponent } from './routes/my-content/components/all-content/all-content.component'
 import { MyContentService } from './routes/my-content/services/my-content.service'
 import { UserPopupComponent } from './routes/user-popup/user-popup'
+import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { UserPopupComponent } from './routes/user-popup/user-popup'
     EditDepartmentDialogComponent,
     CreateUserComponent,
     UserPopupComponent,
+    ComingSoonComponent,
   ],
   imports: [
     CommonModule,
