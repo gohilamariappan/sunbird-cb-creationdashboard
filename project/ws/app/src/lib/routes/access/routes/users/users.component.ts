@@ -18,7 +18,7 @@ export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
   private defaultSideNavBarOpenedSubscription: any
 
   constructor(private usersSvc: UsersService, private router: Router
-    , public dialog: MatDialog) {
+    ,         public dialog: MatDialog) {
 
   }
   ngOnInit() {

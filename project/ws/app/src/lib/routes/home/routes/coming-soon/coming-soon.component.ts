@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core"
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 
 /**
  * We can move this card to Common components later
@@ -10,11 +10,11 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core"
   styleUrls: ['./coming-soon.component.scss'],
 })
 export class ComingSoonComponent implements OnInit {
-  particles: any[] = [];
+  particles: any[] = []
   context!: CanvasRenderingContext2D | null
   mouse = {
     x: window.innerWidth / 2,
-    y: window.innerHeight / 2
+    y: window.innerHeight / 2,
   }
 
   // canvas = document.getElementById('background')
@@ -24,7 +24,7 @@ export class ComingSoonComponent implements OnInit {
   @ViewChild('canvasEl', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>
   constructor() {
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 25; i += 1) {
       this.particles.push({
         x: Math.random() > .5 ? 0 : window.innerWidth,
         y: window.innerHeight / 2,
@@ -32,34 +32,34 @@ export class ComingSoonComponent implements OnInit {
         vy: (Math.random() * 2 - 1),
         history: [],
         size: 4 + Math.random() * 6,
-        color: Math.random() > .5 ? "#000000" : Math.random() > .5 ? "#FF0000" : "#FFFF00"
+        color: Math.random() > .5 ? '#000000' : Math.random() > .5 ? '#FF0000' : '#FFFF00',
       })
     }
   }
   ngOnInit() {
     if (this.canvas && this.canvas.nativeElement.getContext('2d')) {
       this.context = this.canvas.nativeElement.getContext('2d')
-      this.Initialize()
+      this.initialize()
     }
   }
 
-  Initialize() {
+  initialize() {
     if (this.canvas) {
-      this.canvas.nativeElement.addEventListener('mousemove', this.MouseMove.bind(this), false)
-      window.addEventListener('resize', this.ResizeCanvas.bind(this), false)
-      this.TimeUpdate()
+      this.canvas.nativeElement.addEventListener('mousemove', this.mouseMove.bind(this), false)
+      window.addEventListener('resize', this.resizeCanvas.bind(this), false)
+      this.timeUpdate()
       if (this.context) {
         this.context.beginPath()
       }
-      this.ResizeCanvas()
+      this.resizeCanvas()
     }
   }
 
-  TimeUpdate() {
+  timeUpdate() {
     if (this.context) {
       this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
-      for (let i = 0; i < this.particles.length; i++) {
+      for (let i = 0; i < this.particles.length; i += 1) {
         this.particles[i].x += this.particles[i].vx
         this.particles[i].y += this.particles[i].vy
 
@@ -81,26 +81,25 @@ export class ComingSoonComponent implements OnInit {
 
         this.context.strokeStyle = this.particles[i].color
         this.context.beginPath()
-        for (var j = 0; j < this.particles[i].history.length; j++) {
+        for (let j = 0; j < this.particles[i].history.length; j += 1) {
           this.context.lineTo(this.particles[i].history[j].x, this.particles[i].history[j].y)
         }
         this.context.stroke()
 
         this.particles[i].history.push({
           x: this.particles[i].x,
-          y: this.particles[i].y
+          y: this.particles[i].y,
         })
         if (this.particles[i].history.length > 45) {
           this.particles[i].history.shift()
         }
 
-        for (var j = 0; j < this.particles[i].history.length; j++) {
+        for (let j = 0; j < this.particles[i].history.length; j += 1) {
           this.particles[i].history[j].x += 0.01 * (this.mouse.x - this.particles[i].history[j].x) / (45 / j)
           this.particles[i].history[j].y += 0.01 * (this.mouse.y - this.particles[i].history[j].y) / (45 / j)
         }
 
-
-        let distanceFactor = this.DistanceBetween(this.mouse, this.particles[i])
+        let distanceFactor = this.distanceBetween(this.mouse, this.particles[i])
         distanceFactor = Math.pow(Math.max(Math.min(10 - (distanceFactor / 10), 10), 2), 1)
 
         this.context.fillStyle = this.particles[i].color
@@ -111,19 +110,19 @@ export class ComingSoonComponent implements OnInit {
 
       }
 
-      requestAnimationFrame(this.TimeUpdate.bind(this))
+      requestAnimationFrame(this.timeUpdate.bind(this))
     }
   }
 
-  MouseMove(e: any) {
+  mouseMove(e: any) {
     this.mouse.x = e.layerX
     this.mouse.y = e.layerY
 
-    //context.fillRect(e.layerX, e.layerY, 5, 5);
-    //Draw( e.layerX, e.layerY );
+    // context.fillRect(e.layerX, e.layerY, 5, 5);
+    // dDraw( e.layerX, e.layerY );
   }
 
-  Draw(x: any, y: any) {
+  draw(x: any, y: any) {
     if (this.context) {
       this.context.strokeStyle = '#ff0000'
       this.context.lineWidth = 4
@@ -132,16 +131,15 @@ export class ComingSoonComponent implements OnInit {
     }
   }
 
-  ResizeCanvas() {
+  resizeCanvas() {
     this.canvas.nativeElement.width = this.container.nativeElement.offsetWidth - 300
     this.canvas.nativeElement.height = this.container.nativeElement.offsetHeight - 156
   }
 
-  DistanceBetween(p1: any, p2: any) {
+  distanceBetween(p1: any, p2: any) {
     const dx = p2.x - p1.x
     const dy = p2.y - p1.y
     return Math.sqrt(dx * dx + dy * dy)
   }
-
 
 }
