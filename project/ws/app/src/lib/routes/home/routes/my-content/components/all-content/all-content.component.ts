@@ -153,7 +153,7 @@ export class AllContentComponent implements OnInit, OnDestroy {
       columns: [
         {
           displayName: 'Course Name', key: 'name', isList: false, prop: '',
-          link: { path: '/author/content-detail/', dParams: 'identifier' },
+          link: { path: '/app/home/content-detail/', dParams: 'identifier' },
           defaultValue: 'Untitled Content',
           image: 'appIcon',
         },

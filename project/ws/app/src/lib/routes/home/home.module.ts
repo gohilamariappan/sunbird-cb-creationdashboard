@@ -55,6 +55,7 @@ import { AllContentComponent } from './routes/my-content/components/all-content/
 import { MyContentService } from './routes/my-content/services/my-content.service'
 import { UserPopupComponent } from './routes/user-popup/user-popup'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
+import { WelcomeComponent } from './routes/welcome/welcome.component'
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
     CreateUserComponent,
     UserPopupComponent,
     ComingSoonComponent,
+    WelcomeComponent,
   ],
   imports: [
     CommonModule,

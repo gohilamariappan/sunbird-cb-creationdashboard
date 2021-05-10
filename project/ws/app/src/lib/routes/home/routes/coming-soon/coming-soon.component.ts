@@ -39,7 +39,7 @@ export class ComingSoonComponent implements OnInit {
   ngOnInit() {
     if (this.canvas && this.canvas.nativeElement.getContext('2d')) {
       this.context = this.canvas.nativeElement.getContext('2d')
-      this.initialize()
+      // this.initialize()
     }
   }
 

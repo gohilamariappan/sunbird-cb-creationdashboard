@@ -14,6 +14,7 @@ import { InitResolver } from './resolvers/init-resolve.service'
 import { DepartmentResolver } from './routes/my-content/resolvers/department-resolv.servive'
 import { AllContentComponent } from './routes/my-content/components/all-content/all-content.component'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
+import { WelcomeComponent } from './routes/welcome/welcome.component'
 // import { PageResolve } from '@sunbird-cb/utils'
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
     children: [
       {
         path: 'welcome',
-        component: ComingSoonComponent,
+        component: WelcomeComponent,
       },
       {
         path: 'users',
@@ -76,6 +77,15 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'content-detail',
+    loadChildren: () =>
+      import('./routes/content-detail/content-detail.module').then(u => u.ContentDetailModule),
+    data: { load: ['ordinals', 'ckeditor', 'meta'] },
+    resolve: {
+      script: InitResolver,
+    },
+  }
 
 ]
 

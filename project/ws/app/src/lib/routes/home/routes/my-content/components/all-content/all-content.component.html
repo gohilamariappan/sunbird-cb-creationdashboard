@@ -134,13 +134,13 @@
             </div>
           </div>
           <div class="flex margin-left-xs" tabindex="0">
-            <h4 *ngIf="filterMenuItems.length" class="ws-mat-primary-text font-size-m font-weight-bold">
+            <!-- <h4 *ngIf="filterMenuItems.length" class="ws-mat-primary-text font-size-m font-weight-bold">
               <span i18n> Apply Filters</span>
               <a href="javascript:void(0)" role="link" mat-icon-button color="primary" class="text-middle"
                 (click)="sideNavBarOpened = true">
                 <mat-icon>filter_list</mat-icon>
               </a>
-            </h4>
+            </h4> -->
             <mat-chip-list *ngIf="filters && filters.length" #chipList aria-label="Filter">
               <mat-chip [selectable]="true" [removable]="false">
                 <span class="ws-mat-primary-text" i18n>Clear All</span>
