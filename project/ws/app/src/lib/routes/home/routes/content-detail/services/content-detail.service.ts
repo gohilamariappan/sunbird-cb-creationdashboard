@@ -7,8 +7,6 @@ import { ISearchResult } from '../../../interface/search'
 import { AccessControlService } from '../../../services/access-control.service'
 import { ApiService } from '../../../services/api.service'
 import { CONTENT_READ, EXPIRY_DATE_ACTION, SEARCH, SEARCH_V6_ADMIN, SEARCH_V6_AUTH } from '../../my-content/constants/apiEndpoints'
-
-
 @Injectable()
 export class MyContentService {
   constructor(
@@ -21,7 +19,6 @@ export class MyContentService {
       .post<NSApiResponse.ISearchApiResponse>(SEARCH, searchData)
       .pipe(map((data: NSApiResponse.IApiResponse<NSApiResponse.ISearchApiResponse>) => data))
   }
-
 
   fetchFromSearchV6(searchData: any, forAdmin = false): Observable<ISearchResult> {
     return this.apiService.post<ISearchResult>(
@@ -39,12 +36,6 @@ export class MyContentService {
       })
     )
   }
-
-
-
-
-
-
   actionOnExpiry(meta: { expiryDate?: string; isExtend: boolean }, id: string): Observable<null> {
     const requestBody = {
       ...meta,
@@ -54,9 +45,6 @@ export class MyContentService {
     }
     return this.apiService.post<null>(EXPIRY_DATE_ACTION, requestBody)
   }
-
-
-
   getSearchBody(
     mode: string,
     locale: string[] = [],

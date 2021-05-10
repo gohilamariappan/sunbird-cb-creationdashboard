@@ -85,8 +85,7 @@ const routes: Routes = [
     resolve: {
       script: InitResolver,
     },
-  }
-
+  },
 ]
 
 @NgModule({

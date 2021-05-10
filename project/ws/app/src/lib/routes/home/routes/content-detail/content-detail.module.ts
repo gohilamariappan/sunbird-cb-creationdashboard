@@ -7,6 +7,7 @@ import {
   PipeContentRouteModule,
   UserContentDetailedRatingModule,
   UserContentRatingModule,
+  AuthorCardModule,
 } from '@sunbird-cb/collection'
 import { ContentDetailComponent } from './components/content-detail/content-detail.component'
 import { MyContentRoutingModule } from './content-detail-routing.module'
@@ -21,7 +22,6 @@ import { AppTocService } from './services/app-toc.service'
 import { MyTocService } from './services/my-toc.service'
 import { ContentDiscussionComponent } from './components/content-discussion/content-discussion.component'
 import { LocalDataService } from './services/local-data.service'
-import { AuthorCardModule } from '@sunbird-cb/collection'
 
 @NgModule({
   declarations: [ContentDetailHomeComponent, ContentDetailComponent, ContentInsightsComponent, ContentDiscussionComponent],

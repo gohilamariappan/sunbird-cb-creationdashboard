@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router'
 import { NsDiscussionForum } from '@sunbird-cb/collection'
 import { NsWidgetResolver } from '@sunbird-cb/resolver'
 import { ConfigurationsService, NsContent } from '@sunbird-cb/utils'
-
-
 @Component({
   selector: 'ws-auth-content-discussion',
   templateUrl: './content-discussion.component.html',
