@@ -31,7 +31,7 @@ const routes: Routes = [
     children: [
       {
         path: 'welcome',
-        component: WelcomeComponent,
+        component: ComingSoonComponent,
       },
       {
         path: 'users',
