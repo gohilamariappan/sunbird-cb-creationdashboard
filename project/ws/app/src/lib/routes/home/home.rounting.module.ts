@@ -14,7 +14,7 @@ import { InitResolver } from './resolvers/init-resolve.service'
 import { DepartmentResolver } from './routes/my-content/resolvers/department-resolv.servive'
 import { AllContentComponent } from './routes/my-content/components/all-content/all-content.component'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
-import { WelcomeComponent } from './routes/welcome/welcome.component'
+// import { WelcomeComponent } from './routes/welcome/welcome.component'
 // import { PageResolve } from '@sunbird-cb/utils'
 const routes: Routes = [
   {
