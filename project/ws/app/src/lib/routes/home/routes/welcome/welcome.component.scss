@@ -1,3 +1,7 @@
+@import 'ws-common';
+@import 'ws-vars';
+@import 'ws-mixins';
+
 .height-50 {
   min-height: 50vh;
 }
@@ -8,4 +12,24 @@
 
 .no-shadow {
   box-shadow: none !important;
+}
+
+.new-color svg g path {
+  fill: rgb(0, 116, 182);
+}
+
+.width-fill {
+  max-width: fit-content;
+}
+
+.filter {
+  .filter-option {
+    margin: $size-xs $size-m;
+    /* border-bottom: darkslateblue; */
+    border-radius: 0;
+    border-bottom-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
 }

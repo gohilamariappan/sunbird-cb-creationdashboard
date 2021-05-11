@@ -93,6 +93,9 @@ export class InitService {
       'hubs',
       domSanitizer.bypassSecurityTrustResourceUrl('cbc-assets/icons/hubs.svg'),
     )
+    iconRegistry.addSvgIcon(
+      'karmagogi',
+      domSanitizer.bypassSecurityTrustResourceUrl('cbc-assets/icons/iGOT_symbol.svg'))
   }
 
   async init() {

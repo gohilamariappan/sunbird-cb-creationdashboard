@@ -37,7 +37,7 @@ import { RouterModule } from '@angular/router'
 import { HomeRoutingModule } from './home.rounting.module'
 import { HomeComponent } from './routes/home/home.component'
 import { UsersViewComponent } from './routes/users-view/users-view.component'
-import { AvatarPhotoModule, BtnPageBackModule, LeftMenuModule, UIAdminTableModule, UserAutocompleteModule, BreadcrumbsOrgModule, AtGlanceModule, CardTableModule, PipeContentRouteModule } from '@sunbird-cb/collection'
+import { AvatarPhotoModule, BtnPageBackModule, LeftMenuModule, UIAdminTableModule, UserAutocompleteModule, BreadcrumbsOrgModule, AtGlanceModule, CardTableModule, PipeContentRouteModule, BtnFullscreenModule } from '@sunbird-cb/collection'
 import { AboutComponent } from './routes/about/about.component'
 import { RolesAccessComponent } from './routes/roles-access/roles-access.component'
 import { DirectoryViewComponent } from './routes/directory/directroy.component'
@@ -56,6 +56,7 @@ import { MyContentService } from './routes/my-content/services/my-content.servic
 import { UserPopupComponent } from './routes/user-popup/user-popup'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
 import { WelcomeComponent } from './routes/welcome/welcome.component'
+import { CountModule } from './routes/welcome/count-component/count.module'
 
 @NgModule({
   declarations: [
@@ -77,7 +78,9 @@ import { WelcomeComponent } from './routes/welcome/welcome.component'
   imports: [
     CommonModule,
     UIAdminTableModule,
+    CountModule,
     WidgetResolverModule,
+    BtnFullscreenModule,
     ReactiveFormsModule,
     HomeRoutingModule,
     LeftMenuModule,

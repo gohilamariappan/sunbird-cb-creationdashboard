@@ -1,7 +1,9 @@
 
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core'
+import { DOCUMENT } from '@angular/common'
+import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/core'
 /* tslint:disable */
 import _ from 'lodash'
+import { environment } from '../../../../../../../../../src/environments/environment'
 /* tslint:enable */
 
 @Component({
@@ -14,10 +16,117 @@ import _ from 'lodash'
 })
 
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor() {
+  sliderData1!: any
+  sliderData2!: any
+  sliderData3!: any
+  sliderData4!: any
+  sliderData5!: any
 
+  resolutionFilter = 'week'
+  compFilter = 'table'
+
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.sliderData1 = {
+      widgetType: 'slider',
+      widgetSubType: 'sliderBanners',
+      style: {
+        'border-radius': '8px'
+      },
+      widgetData: [
+        {
+          banners: {
+            'l': 'assets/instances/eagle/cbc_welcome/banner.png',
+            'm': 'assets/instances/eagle/cbc_welcome/banner.png',
+            's': 'assets/instances/eagle/cbc_welcome/banner.png',
+            'xl': 'assets/instances/eagle/cbc_welcome/banner.png',
+            'xs': 'assets/instances/eagle/cbc_welcome/banner.png',
+            'xxl': 'assets/instances/eagle/cbc_welcome/banner.png'
+          }
+        }
+      ]
+    }
+    this.sliderData2 = {
+      widgetType: 'slider',
+      widgetSubType: 'sliderBanners',
+      style: {
+        'border-radius': '8px'
+      },
+      widgetData: [
+        {
+          banners: {
+            'l': 'assets/instances/eagle/cbc_welcome/thisweek.png',
+            'm': 'assets/instances/eagle/cbc_welcome/thisweek.png',
+            's': 'assets/instances/eagle/cbc_welcome/thisweek.png',
+            'xl': 'assets/instances/eagle/cbc_welcome/thisweek.png',
+            'xs': 'assets/instances/eagle/cbc_welcome/thisweek.png',
+            'xxl': 'assets/instances/eagle/cbc_welcome/thisweek.png'
+          }
+        }
+      ]
+    }
+    this.sliderData3 = {
+      widgetType: 'slider',
+      widgetSubType: 'sliderBanners',
+      style: {
+        'border-radius': '8px'
+      },
+      widgetData: [
+        {
+          banners: {
+            'l': 'assets/instances/eagle/cbc_welcome/tranding.png',
+            'm': 'assets/instances/eagle/cbc_welcome/tranding.png',
+            's': 'assets/instances/eagle/cbc_welcome/tranding.png',
+            'xl': 'assets/instances/eagle/cbc_welcome/tranding.png',
+            'xs': 'assets/instances/eagle/cbc_welcome/tranding.png',
+            'xxl': 'assets/instances/eagle/cbc_welcome/tranding.png'
+          }
+        }
+      ]
+    }
+    this.sliderData4 = {
+      widgetType: 'slider',
+      widgetSubType: 'sliderBanners',
+      style: {
+        'border-radius': '8px'
+      },
+      widgetData: [
+        {
+          banners: {
+            'l': 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
+            'm': 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
+            's': 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
+            'xl': 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
+            'xs': 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
+            'xxl': 'assets/instances/eagle/cbc_welcome/cbpUploads.png'
+          }
+        }
+      ]
+    }
+    this.sliderData5 = {
+      widgetType: 'slider',
+      widgetSubType: 'sliderBanners',
+      style: {
+        'border-radius': '8px'
+      },
+      widgetData: [
+        {
+          banners: {
+            'l': 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            'm': 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            's': 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            'xl': 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            'xs': 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            'xxl': 'assets/instances/eagle/cbc_welcome/compcoverage.png'
+          }
+        }
+      ]
+    }
   }
-  decideAPICall() {
+  filterR(type: string) {
+    this.resolutionFilter = type
+  }
+  filterComp(type: string) {
+    this.compFilter = type
   }
   ngOnDestroy() {
 
@@ -25,7 +134,16 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
 
   }
-
+  openky() {
+    this.openNewWindow()
+  }
+  openNewWindow(): void {
+    const link = this.document.createElement('a')
+    link.target = '_blank'
+    link.href = environment.karmYogiPath
+    link.click()
+    link.remove()
+  }
   ngAfterViewInit() {
   }
 }
