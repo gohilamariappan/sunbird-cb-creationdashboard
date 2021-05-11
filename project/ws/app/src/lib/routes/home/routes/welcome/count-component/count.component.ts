@@ -17,7 +17,7 @@ import { IPrintCount } from './count.model'
 
 export class CountComponent extends WidgetBaseComponent implements OnInit, NsWidgetResolver.IWidgetData<IPrintCount> {
   @Input() widgetData!: IPrintCount
-  @HostBinding('class') className = "'flex margin-xs"
+  @HostBinding('class') className = '\'flex margin-xs'
   ngOnInit(): void {
   }
 }
