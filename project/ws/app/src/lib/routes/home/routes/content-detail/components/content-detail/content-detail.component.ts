@@ -17,6 +17,8 @@ import { NSContent } from '../../../../interface/content'
 import { IAuthoringPagination } from '../../../../interface/authored'
 import { LoaderService } from '../../../../services/loader.service'
 import { AccessControlService } from '../../../../services/access-control.service'
+import { ProfileV2Service } from '../../../../services/home.servive'
+import { environment } from 'src/environments/environment'
 // import { AuthInitService } from '../../../../services/init.service'
 /* tslint:enable */
 
@@ -61,6 +63,9 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
   private defaultSideNavBarOpenedSubscription: any
   mode$ = this.isLtMedium$.pipe(map(isMedium => (isMedium ? 'over' : 'side')))
   public screenSizeIsLtMedium = false
+  showKarmayogiLink = false
+  karmayogiLink = ''
+  userRole = ''
 
   @ViewChild('searchInput', { static: false }) searchInputElem: ElementRef<any> = {} as ElementRef<
     any
@@ -75,7 +80,8 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
     // private durationPipe: PipeDurationTransformPipe,
     private valueSvc: ValueService,
     private dataService: LocalDataService,
-    private myTocService: MyTocService
+    private myTocService: MyTocService,
+    private homeResolver: ProfileV2Service
   ) {
     this.isAdmin = this.accessService.hasRole(['admin', 'super-admin', 'content-admin', 'editor', 'cbc admin'])
   }
@@ -90,7 +96,9 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
     this.loadService.changeLoad.next(false)
   }
 
+
   ngOnInit() {
+    this.getUserDetails()
     this.pagination = {
       offset: 0,
       limit: 24,
@@ -102,6 +110,21 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
       this.status = params.status || 'published'
       this.setAction()
       this.fetchContent()
+    })
+  }
+
+  getUserDetails() {
+    this.homeResolver.getUserDetails().subscribe((res: any) => {
+      if (res.roles && res.roles.length > 0) {
+        Object.keys(res.roles).forEach((key: any) => {
+          const objVal = res.roles[key]
+          if (objVal === 'Member') {
+            this.userRole = 'Member'
+            this.showKarmayogiLink = true
+            this.karmayogiLink = `${environment.karmYogiPath}/app/toc/${this.contentId}/overview`
+          }
+        })
+      }
     })
   }
   changeToDefaultImg($event: any) {
@@ -159,6 +182,7 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
   }
 
   getGlanceData(): IAtGlanceComponentData.IData | null {
+
     if (this.contentId && this.content && this.tocStructure) {
       return {
         displayName: 'At a glance', // now not using JSON
@@ -168,6 +192,9 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
         duration: (this.content.duration || '0').toString(),
         lastUpdate: this.content.lastUpdatedOn,
         counts: this.tocStructure,
+        competencies: this.content.competencies,
+        viewContentLink: (this.showKarmayogiLink) ? this.karmayogiLink : '',
+        userRole: (this.userRole !== '') ? this.userRole : ''
       }
     }
     return null

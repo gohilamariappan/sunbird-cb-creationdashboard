@@ -4,6 +4,7 @@ import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/co
 /* tslint:disable */
 import _ from 'lodash'
 import { environment } from '../../../../../../../../../src/environments/environment'
+import { ProfileV2Service } from '../../services/home.servive'
 /* tslint:enable */
 
 @Component({
@@ -24,8 +25,10 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   resolutionFilter = 'week'
   compFilter = 'table'
+  showCBPLink = false
+  showKarmayogiLink = false
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private document: Document, private homeResolver: ProfileV2Service) {
     this.sliderData1 = {
       widgetType: 'slider',
       widgetSubType: 'sliderBanners',
@@ -132,8 +135,36 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
   ngOnInit() {
-
+    this.getUserDetails()
+    this.fetchRoles()
   }
+  getUserDetails() {
+    this.homeResolver.getUserDetails().subscribe((res: any) => {
+      if (res.roles && res.roles.length > 0) {
+        Object.keys(res.roles).forEach((key: any) => {
+          const objVal = res.roles[key]
+          if (objVal === 'CONTENT_CREATOR' || objVal === 'EDITOR' || objVal === 'PUBLISHER' || objVal === 'REVIEWER') {
+            this.showCBPLink = true
+          }
+          if (objVal === 'Member') {
+            this.showKarmayogiLink = true
+          }
+        })
+      }
+    })
+  }
+  fetchRoles() {
+    const rolesAndAccessData: any[] = []
+    this.homeResolver.getMyDepartment().subscribe((roles: any) => {
+      roles.rolesInfo.forEach((role: { roleName: string }) => {
+        rolesAndAccessData.push({
+          role: role.roleName,
+          count: roles.noOfUsers,
+        })
+      })
+    })
+  }
+
   openky() {
     this.openNewWindow()
   }
@@ -141,6 +172,16 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const link = this.document.createElement('a')
     link.target = '_blank'
     link.href = environment.karmYogiPath
+    link.click()
+    link.remove()
+  }
+  openCBP() {
+    this.openNewWindowCBP()
+  }
+  openNewWindowCBP(): void {
+    const link = this.document.createElement('a')
+    link.target = '_blank'
+    link.href = environment.cbpPath
     link.click()
     link.remove()
   }

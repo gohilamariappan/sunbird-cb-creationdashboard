@@ -11,6 +11,7 @@ const API_END_POINTS = {
   SOCIAL_VIEW_CONVERSATION: `${PROTECTED_SLAG_V8}/social/post/viewConversation`,
   getUserdetailsV2FromRegistry: '/apis/protected/v8/user/profileDetails/getUserRegistryById',
   GET_MY_DEPARTMENT: '/apis/protected/v8/portal/cbc/mydepartment?allUsers=true',
+  GET_USER_DETAILS: `/apis/protected/v8/user/details?ts='${Date.now()}`,
 }
 
 @Injectable({
@@ -31,5 +32,8 @@ export class ProfileV2Service {
   getMyDepartment(): Observable<any> {
     return this.http.get<any>(`${API_END_POINTS.GET_MY_DEPARTMENT}`)
     // return EMPTY
+  }
+  getUserDetails(): Observable<any> {
+    return this.http.get<any>(`${API_END_POINTS.GET_USER_DETAILS}`)
   }
 }
