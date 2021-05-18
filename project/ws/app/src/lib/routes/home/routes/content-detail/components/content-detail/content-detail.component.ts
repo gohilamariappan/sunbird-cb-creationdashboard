@@ -63,7 +63,7 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
   private defaultSideNavBarOpenedSubscription: any
   mode$ = this.isLtMedium$.pipe(map(isMedium => (isMedium ? 'over' : 'side')))
   public screenSizeIsLtMedium = false
-  showKarmayogiLink = false
+  showKarmayogiLink!: boolean
   karmayogiLink = ''
   userRole = ''
 
@@ -83,6 +83,7 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
     private myTocService: MyTocService,
     private homeResolver: ProfileV2Service
   ) {
+    this.showKarmayogiLink = false
     this.isAdmin = this.accessService.hasRole(['admin', 'super-admin', 'content-admin', 'editor', 'cbc admin'])
   }
 
@@ -95,7 +96,6 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
     }
     this.loadService.changeLoad.next(false)
   }
-
 
   ngOnInit() {
     this.getUserDetails()
@@ -193,8 +193,8 @@ export class ContentDetailComponent implements OnInit, OnDestroy {
         lastUpdate: this.content.lastUpdatedOn,
         counts: this.tocStructure,
         competencies: this.content.competencies,
-        viewContentLink: (this.showKarmayogiLink) ? this.karmayogiLink : '',
-        userRole: (this.userRole !== '') ? this.userRole : ''
+        viewContentLink: this.karmayogiLink,
+        userRole: (this.userRole !== '') ? this.userRole : '',
       }
     }
     return null
