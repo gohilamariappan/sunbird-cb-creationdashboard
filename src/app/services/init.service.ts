@@ -22,6 +22,7 @@ import {
 } from '@sunbird-cb/utils'
 import { environment } from '../../environments/environment'
 import { Omit } from 'lodash'
+import { retry } from 'rxjs/operators'
 
 interface IDetailsResponse {
   tncStatus: boolean
@@ -242,7 +243,7 @@ export class InitService {
   }
 
   private async fetchStartUpDetails(): Promise<IDetailsResponse> {
-    let userRoles: string[] = []
+    //let userRoles: string[] = []
     if (this.configSvc.instanceConfig && !Boolean(this.configSvc.instanceConfig.disablePidCheck)) {
       let userPidProfile: NsUser.IUserPidProfileV2 | null = null
       try {
@@ -281,10 +282,10 @@ export class InitService {
         //   // userName: `${userPidProfile.user.first_name} ${userPidProfile.user.last_name}`,
         // }
 
-        if (userPidProfile.result.response.organisations.length > 0) {
-          const organisationData = userPidProfile.result.response.organisations
-          userRoles = (organisationData[0].roles.length > 0) ? organisationData[0].roles : []
-        }
+        // if (userPidProfile.result.response.organisations.length > 0) {
+        //   const organisationData = userPidProfile.result.response.organisations
+        //   userRoles = (organisationData[0].roles.length > 0) ? organisationData[0].roles : []
+        // }
         this.configSvc.unMappedUser = userPidProfile.result.response
         this.configSvc.userProfile = {
           country: userPidProfile.result.response.countryCode || null,
@@ -318,11 +319,12 @@ export class InitService {
         }
       }
     }
-    // const details: IDetailsResponse = await this.http
-    //   .get<IDetailsResponse>(endpoint.details).pipe(retry(3))
-    //   .toPromise()
+    const details2: IDetailsResponse = await this.http
+      .get<IDetailsResponse>(endpoint.details).pipe(retry(3))
+      .toPromise()
+
     // this.configSvc.userGroups = new Set(details.group)
-    // this.configSvc.userRoles = new Set(details.roles)
+    this.configSvc.userRoles = new Set(details2.roles)
     // if (this.configSvc.userProfile && this.configSvc.userProfile.isManager) {
     //   this.configSvc.userRoles.add('is_manager')
     // }
@@ -331,10 +333,10 @@ export class InitService {
     // this.configSvc.profileDetailsStatus = details.profileDetailsStatus
     // return details
 
-    const details = { group: [], profileDetailsStatus: true, roles: userRoles, tncStatus: true }
+    const details = { group: [], profileDetailsStatus: true, roles: details2.roles, tncStatus: true }
     this.configSvc.hasAcceptedTnc = details.tncStatus
     this.configSvc.profileDetailsStatus = details.profileDetailsStatus
-    this.configSvc.userRoles = new Set(userRoles)
+    //this.configSvc.userRoles = new Set(userRoles)
     return details
   }
 
@@ -351,7 +353,7 @@ export class InitService {
     return publicConfig
   }
   private async fetchUserProfileV2(): Promise<IDetailsResponse> {
-    const userRoles: string[] = []
+
     if (this.configSvc.instanceConfig && !Boolean(this.configSvc.instanceConfig.disablePidCheck)) {
       let userPidProfileV2: NsUser.IUserPidProfileVer2 | null = null
       try {
@@ -378,19 +380,19 @@ export class InitService {
         }
       }
     }
-    // const details: IDetailsResponse = await this.http
-    //   .get<IDetailsResponse>(endpoint.details).pipe(retry(3))
-    //   .toPromise()
+    const details2: IDetailsResponse = await this.http
+      .get<IDetailsResponse>(endpoint.details).pipe(retry(3))
+      .toPromise()
     // this.configSvc.userGroups = new Set(details.group)
-    // this.configSvc.userRoles = new Set(details.roles)
+    this.configSvc.userRoles = new Set(details2.roles)
     // if (this.configSvc.userProfile && this.configSvc.userProfile.isManager) {
     //   this.configSvc.userRoles.add('is_manager')
     // }
     // tslint:disable-next-line: max-line-length
-    const details = { group: [], profileDetailsStatus: true, roles: userRoles, tncStatus: true }
+    const details = { group: [], profileDetailsStatus: true, roles: details2.roles, tncStatus: true }
     this.configSvc.hasAcceptedTnc = details.tncStatus
     this.configSvc.profileDetailsStatus = details.profileDetailsStatus
-    this.configSvc.userRoles = new Set(userRoles)
+    //this.configSvc.userRoles = new Set(userRoles)
     return details
   }
 

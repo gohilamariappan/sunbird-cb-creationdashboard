@@ -15,6 +15,7 @@ import { DepartmentResolver } from './routes/my-content/resolvers/department-res
 import { AllContentComponent } from './routes/my-content/components/all-content/all-content.component'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
 import { WelcomeComponent } from './routes/welcome/welcome.component'
+import { UserRoleResolve } from './resolvers/userrole-resolve'
 // import { PageResolve } from '@sunbird-cb/utils'
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     component: HomeComponent,
     resolve: {
       department: DepartmentResolve,
+      userRoles: UserRoleResolve
     },
     children: [
       {
@@ -96,6 +98,7 @@ const routes: Routes = [
     DepartmentResolve,
     InitResolver,
     DepartmentResolver,
+    UserRoleResolve,
   ],
 })
 export class HomeRoutingModule { }

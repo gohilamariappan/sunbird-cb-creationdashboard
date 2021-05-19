@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  sitePath: 'cbc-sb.idc.tarento.com',
-  karmYogiPath: 'https://igot-sunbird.idc.tarento.com',
-  cbpPath: 'https://igot-sunbird-cbp.idc.tarento.com/',
+  sitePath: 'igot-pp-sunbird-cbc.idc.tarento.com',
+  karmYogiPath: 'https://igot-pp-sunbird.idc.tarento.com',
+  cbpPath: 'https://igot-pp-sunbird-cbp.idc.tarento.com',
 }

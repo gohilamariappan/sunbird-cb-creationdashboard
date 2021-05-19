@@ -47,7 +47,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
   constructor(private valueSvc: ValueService, private router: Router, private activeRoute: ActivatedRoute) {
+
+    if (this.activeRoute.snapshot.data.userRoles) {
+      this.myRoles = this.activeRoute.snapshot.data.userRoles
+    }
     this.router.events.subscribe((event: Event) => {
+
       if (event instanceof NavigationEnd) {
         // Hide loading indicator
         // console.log(event.url)
