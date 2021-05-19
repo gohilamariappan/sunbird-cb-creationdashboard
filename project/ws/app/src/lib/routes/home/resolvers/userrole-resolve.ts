@@ -3,7 +3,6 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { EMPTY, Observable, of } from 'rxjs'
 import { ConfigurationsService } from '@sunbird-cb/utils'
 
-
 @Injectable()
 export class UserRoleResolve
   implements
@@ -14,7 +13,6 @@ export class UserRoleResolve
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot,
   ): Observable<any> {
-    console.log(this.configService)
     return of(this.configService.userRoles || EMPTY)
   }
 }

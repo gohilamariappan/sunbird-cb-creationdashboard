@@ -16,7 +16,6 @@ export class DepartmentResolve
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot,
   ): Observable<IResolveResponse<NSProfileDataV2.IProfile>> {
-    console.log(this.configService)
     return this.profileService.getMyDepartment().pipe(
       map(data => ({ data, error: null })),
       catchError(() => {

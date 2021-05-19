@@ -28,7 +28,7 @@ const routes: Routes = [
     component: HomeComponent,
     resolve: {
       department: DepartmentResolve,
-      userRoles: UserRoleResolve
+      userRoles: UserRoleResolve,
     },
     children: [
       {

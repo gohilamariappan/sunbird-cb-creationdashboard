@@ -243,7 +243,7 @@ export class InitService {
   }
 
   private async fetchStartUpDetails(): Promise<IDetailsResponse> {
-    //let userRoles: string[] = []
+    // let userRoles: string[] = []
     if (this.configSvc.instanceConfig && !Boolean(this.configSvc.instanceConfig.disablePidCheck)) {
       let userPidProfile: NsUser.IUserPidProfileV2 | null = null
       try {
@@ -336,7 +336,7 @@ export class InitService {
     const details = { group: [], profileDetailsStatus: true, roles: details2.roles, tncStatus: true }
     this.configSvc.hasAcceptedTnc = details.tncStatus
     this.configSvc.profileDetailsStatus = details.profileDetailsStatus
-    //this.configSvc.userRoles = new Set(userRoles)
+    // this.configSvc.userRoles = new Set(userRoles)
     return details
   }
 
@@ -392,7 +392,7 @@ export class InitService {
     const details = { group: [], profileDetailsStatus: true, roles: details2.roles, tncStatus: true }
     this.configSvc.hasAcceptedTnc = details.tncStatus
     this.configSvc.profileDetailsStatus = details.profileDetailsStatus
-    //this.configSvc.userRoles = new Set(userRoles)
+    // this.configSvc.userRoles = new Set(userRoles)
     return details
   }
 
