@@ -57,6 +57,7 @@ import { UserPopupComponent } from './routes/user-popup/user-popup'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
 import { WelcomeComponent } from './routes/welcome/welcome.component'
 import { CountModule } from './routes/welcome/count-component/count.module'
+import { RainDashboardsModule } from 'rain-dashboards'
 
 @NgModule({
   declarations: [
@@ -132,6 +133,7 @@ import { CountModule } from './routes/welcome/count-component/count.module'
     MatFormFieldModule,
     FormsModule,
     AtGlanceModule,
+    RainDashboardsModule,
     NgMultiSelectDropDownModule.forRoot(),
   ],
   entryComponents: [OpenRolesDialogComponent, EditDepartmentDialogComponent],

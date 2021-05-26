@@ -4,6 +4,7 @@ import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from 
 import { BtnPageBackModule } from '@sunbird-cb/collection'
 import { MyDashboardHomeComponent } from './components/my-dashboard-home/my-dashboard-home.component'
 import { MyDashboardRoutingModule } from './my-dashboard-routing.module'
+import { RainDashboardsModule } from 'rain-dashboards'
 
 @NgModule({
   declarations: [MyDashboardHomeComponent],
@@ -15,6 +16,7 @@ import { MyDashboardRoutingModule } from './my-dashboard-routing.module'
     MatIconModule,
     MatToolbarModule,
     BtnPageBackModule,
+    RainDashboardsModule
   ], exports: [MyDashboardHomeComponent],
 })
 export class MyDashboardModule { }
