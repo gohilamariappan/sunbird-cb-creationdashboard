@@ -16,7 +16,7 @@ import { RainDashboardsModule } from 'rain-dashboards'
     MatIconModule,
     MatToolbarModule,
     BtnPageBackModule,
-    RainDashboardsModule
+    RainDashboardsModule,
   ], exports: [MyDashboardHomeComponent],
 })
 export class MyDashboardModule { }
