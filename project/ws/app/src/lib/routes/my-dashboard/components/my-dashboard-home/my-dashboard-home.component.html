@@ -1,10 +1,18 @@
-<mat-toolbar [color]="pageNavbar.color" [ngStyle]="pageNavbar?.styles">
+<!-- <mat-toolbar [color]="pageNavbar.color" [ngStyle]="pageNavbar?.styles">
   <ws-widget-btn-page-back [widgetData]="{ url: 'back' }"></ws-widget-btn-page-back>
   <span class="ml-2" i18n>Dashboard</span>
-</mat-toolbar>
-<mat-card class="m-6 center3 sm:center">
+</mat-toolbar> -->
+<!-- <mat-card class="m-6 center3 sm:center">
   <div class="flex flex-col justify-center items-center height">
     <div class="m-6 md:m-4 text-4xl font-bold ws-mat-primary-text">Coming soon</div>
   </div>
 
-</mat-card>
+</mat-card> -->
+
+<div *ngIf="currentDashboard[0]">
+  <lib-rain-dashboards [layoutConfig]="currentDashboard[0].visualizationDetails"
+    [chartConfig]="currentDashboard[0].chartDetails" [dashboardConfig]="dashboardList"
+    [showFilters]="currentDashboard[0].showFilters" [showWidgets]="currentDashboard[0].showWidgets"
+    [filtersConfig]="currentDashboard[0].filtersDetails" [widgetConfig]="currentDashboard[0].widgetDetails"
+    [widgetData]="currentDashboard[0].widgetData" (libDashboardId)="getDashboardId($event)"></lib-rain-dashboards>
+</div>
