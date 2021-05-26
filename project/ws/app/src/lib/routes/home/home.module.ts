@@ -57,7 +57,7 @@ import { UserPopupComponent } from './routes/user-popup/user-popup'
 import { ComingSoonComponent } from './routes/coming-soon/coming-soon.component'
 import { WelcomeComponent } from './routes/welcome/welcome.component'
 import { CountModule } from './routes/welcome/count-component/count.module'
-import { RainDashboardsModule } from 'rain-dashboards'
+import { RainDashboardsModule } from '@sunbird-cb/rain-dashboards'
 
 @NgModule({
   declarations: [
