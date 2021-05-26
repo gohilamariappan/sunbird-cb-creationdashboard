@@ -56,21 +56,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   dashboardOne = {
     showFilters: 'false',
     showWidgets: 'false',
-    // filtersDetails: [
-    //   {
-    //     name: "Content",
-    //     id: 1,
-    //     key: "content",
-    //     values: [
-    //       "All",
-    //       "Collection",
-    //       "Course",
-    //       "Knowledge Board",
-    //       "Learning Path",
-    //       "Resource",
-    //     ],
-    //   },
-    // ],
     visualizationDetails: [
       {
         row: 1,
@@ -314,15 +299,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
                   label: 'Header',
                   name: 'Female',
                   value: 383,
-                  valueLabel: 'Value',
-                  symbol: 'number',
-                  parentName: null,
-                  parentLabel: null,
-                },
-                {
-                  label: 'Header',
-                  name: 'Others',
-                  value: 2,
                   valueLabel: 'Value',
                   symbol: 'number',
                   parentName: null,
@@ -686,7 +662,16 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     this.getUserDetails()
     this.fetchRoles()
+    this.selectDashbord()
   }
+
+  selectDashbord() {
+    if (this.selectedDashboardId === '') {
+      this.selectedDashboardId = this.dashboardList[0].responseData[0].id
+      this.currentDashboard.push(this.dashboardOne)
+    }
+  }
+
   getUserDetails() {
     this.homeResolver.getUserDetails().subscribe((res: any) => {
       if (res.roles && res.roles.length > 0) {
