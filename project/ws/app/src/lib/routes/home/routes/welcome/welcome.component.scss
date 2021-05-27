@@ -1,6 +1,7 @@
 @import 'ws-common';
 @import 'ws-vars';
 @import 'ws-mixins';
+// @import './bootstrap-rain.css';
 
 .height-50 {
   min-height: 50vh;
@@ -32,4 +33,9 @@
     border-left-width: 0;
     border-right-width: 0;
   }
+}
+
+.rel-custom {
+  position: absolute;
+  right: 24px;
 }
