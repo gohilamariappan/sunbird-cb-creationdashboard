@@ -144,9 +144,10 @@
     <div class="col-11">
       <lib-rain-dashboards [layoutConfig]="currentDashboard[0].visualizationDetails"
         [chartConfig]="currentDashboard[0].chartDetails" [dashboardConfig]="dashboardList" [showFilters]="false"
-        [showWidgets]="false" [filtersConfig]="currentDashboard[0].filtersDetails"
+        [showWidgets]="true" [filtersConfig]="currentDashboard[0].filtersDetails"
         [widgetConfig]="currentDashboard[0].widgetDetails" [widgetData]="currentDashboard[0].widgetData"
-        (libDashboardId)="getDashboardId($event)"></lib-rain-dashboards>
+        (libDashboardId)="getDashboardId($event)" [showWidgetTitle]="currentDashboard[0].showWidgetTitle"
+        [widgetTitle]="currentDashboard[0].widgetTitle"></lib-rain-dashboards>
     </div>
   </div>
 </div>

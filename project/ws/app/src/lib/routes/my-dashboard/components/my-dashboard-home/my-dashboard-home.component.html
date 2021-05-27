@@ -9,10 +9,12 @@
 
 </mat-card> -->
 
-<div *ngIf="currentDashboard[0]">
+<div *ngIf="currentDashboard[0]" style="background-color: #F0F3F4;">
   <lib-rain-dashboards [layoutConfig]="currentDashboard[0].visualizationDetails"
     [chartConfig]="currentDashboard[0].chartDetails" [dashboardConfig]="dashboardList"
     [showFilters]="currentDashboard[0].showFilters" [showWidgets]="currentDashboard[0].showWidgets"
     [filtersConfig]="currentDashboard[0].filtersDetails" [widgetConfig]="currentDashboard[0].widgetDetails"
-    [widgetData]="currentDashboard[0].widgetData" (libDashboardId)="getDashboardId($event)"></lib-rain-dashboards>
+    [widgetData]="currentDashboard[0].widgetData" (libDashboardId)="getDashboardId($event)"
+    [showWidgetTitle]="currentDashboard[0].showWidgetTitle" [widgetTitle]="currentDashboard[0].widgetTitle">
+  </lib-rain-dashboards>
 </div>
