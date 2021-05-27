@@ -1,6 +1,6 @@
 
 import { DOCUMENT } from '@angular/common'
-import { AfterViewInit, Component, Inject, OnDestroy, OnInit } from '@angular/core'
+import { AfterViewInit, Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core'
 /* tslint:disable */
 import _ from 'lodash'
 import { environment } from '../../../../../../../../../src/environments/environment'
@@ -10,18 +10,15 @@ import { ProfileV2Service } from '../../services/home.servive'
 @Component({
   selector: 'ws-app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss'],
+  styleUrls: ['./welcome.component.scss', './bootstrap-rain.scss'],
+  encapsulation: ViewEncapsulation.None,
   /* tslint:disable */
-  host: { class: 'flex flex-1 margin-top-l' },
+  host: { class: 'flex flex-1' },
   /* tslint:enable */
 })
 
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   sliderData1!: any
-  sliderData2!: any
-  sliderData3!: any
-  sliderData4!: any
-  sliderData5!: any
 
   resolutionFilter = 'week'
   compFilter = 'table'
@@ -1190,88 +1187,12 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       widgetData: [
         {
           banners: {
-            l: 'assets/instances/eagle/cbc_welcome/banner.png',
-            m: 'assets/instances/eagle/cbc_welcome/banner.png',
-            s: 'assets/instances/eagle/cbc_welcome/banner.png',
-            xl: 'assets/instances/eagle/cbc_welcome/banner.png',
-            xs: 'assets/instances/eagle/cbc_welcome/banner.png',
-            xxl: 'assets/instances/eagle/cbc_welcome/banner.png',
-          },
-        },
-      ],
-    }
-    this.sliderData2 = {
-      widgetType: 'slider',
-      widgetSubType: 'sliderBanners',
-      style: {
-        'border-radius': '8px',
-      },
-      widgetData: [
-        {
-          banners: {
-            l: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-            m: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-            s: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-            xl: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-            xs: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-            xxl: 'assets/instances/eagle/cbc_welcome/thisweek.png',
-          },
-        },
-      ],
-    }
-    this.sliderData3 = {
-      widgetType: 'slider',
-      widgetSubType: 'sliderBanners',
-      style: {
-        'border-radius': '8px',
-      },
-      widgetData: [
-        {
-          banners: {
-            l: 'assets/instances/eagle/cbc_welcome/tranding.png',
-            m: 'assets/instances/eagle/cbc_welcome/tranding.png',
-            s: 'assets/instances/eagle/cbc_welcome/tranding.png',
-            xl: 'assets/instances/eagle/cbc_welcome/tranding.png',
-            xs: 'assets/instances/eagle/cbc_welcome/tranding.png',
-            xxl: 'assets/instances/eagle/cbc_welcome/tranding.png',
-          },
-        },
-      ],
-    }
-    this.sliderData4 = {
-      widgetType: 'slider',
-      widgetSubType: 'sliderBanners',
-      style: {
-        'border-radius': '8px',
-      },
-      widgetData: [
-        {
-          banners: {
-            l: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-            m: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-            s: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-            xl: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-            xs: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-            xxl: 'assets/instances/eagle/cbc_welcome/cbpUploads.png',
-          },
-        },
-      ],
-    }
-    this.sliderData5 = {
-      widgetType: 'slider',
-      widgetSubType: 'sliderBanners',
-      style: {
-        'border-radius': '8px',
-      },
-      widgetData: [
-        {
-          banners: {
-            l: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
-            m: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
-            s: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
-            xl: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
-            xs: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
-            xxl: 'assets/instances/eagle/cbc_welcome/compcoverage.png',
+            l: 'assets/instances/eagle/cbc_welcome/CBC_banner_l.jpg',
+            m: 'assets/instances/eagle/cbc_welcome/CBC_banner_m.jpg',
+            s: 'assets/instances/eagle/cbc_welcome/CBC_banner_m.jpg',
+            xl: 'assets/instances/eagle/cbc_welcome/CBC_banner_xl.jpg',
+            xs: 'assets/instances/eagle/cbc_welcome/CBC_banner_m.jpg',
+            xxl: 'assets/instances/eagle/cbc_welcome/CBC_banner_xl.jpg',
           },
         },
       ],

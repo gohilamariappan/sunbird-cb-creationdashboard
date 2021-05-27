@@ -6,15 +6,17 @@ import {
   MatButtonModule,
   MatRippleModule,
   MatIconModule,
+  MatProgressSpinnerModule,
 } from '@angular/material'
 
-import { BtnPageBackModule } from '@sunbird-cb/collection'
+import { BtnPageBackModuleAdmin } from '@sunbird-cb/collection'
 
 import { NotificationV2RoutingModule } from './notification-v2-routing.module'
 import { HomeComponent } from './components/home/home.component'
 import { NotificationService } from './services/notification.service'
 import { NotificationApiService } from './services/notification-api.service'
 import { NotificationEventComponent } from './components/notification-event/notification-event.component'
+import { LoaderService } from '../home/services/loader.service'
 
 @NgModule({
   declarations: [HomeComponent, NotificationEventComponent],
@@ -26,8 +28,9 @@ import { NotificationEventComponent } from './components/notification-event/noti
     MatButtonModule,
     MatRippleModule,
     MatIconModule,
-    BtnPageBackModule,
+    BtnPageBackModuleAdmin,
+    MatProgressSpinnerModule,
   ],
-  providers: [NotificationApiService, NotificationService],
+  providers: [NotificationApiService, NotificationService, LoaderService],
 })
 export class NotificationV2Module { }

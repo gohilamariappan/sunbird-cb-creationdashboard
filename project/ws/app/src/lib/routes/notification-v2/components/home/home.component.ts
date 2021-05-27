@@ -6,6 +6,7 @@ import { ENotificationType, INotification } from '../../models/notifications.mod
 import { NotificationService } from '../../services/notification.service'
 import { noop } from 'rxjs'
 import { Router } from '@angular/router'
+import { LoaderService } from '../../../home/services/loader.service'
 
 @Component({
   selector: 'ws-app-home',
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
     private configSvc: ConfigurationsService,
     private notificationApi: NotificationApiService,
     private notificationSvc: NotificationService,
+    private loadService: LoaderService,
     private router: Router,
   ) {
     this.pageSize = 5
@@ -37,12 +39,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.fetchActionNotifications()
     this.fetchInfoNotifications()
   }
 
   fetchActionNotifications() {
     this.actionNotificationsFetchStatus = 'fetching'
+    this.loadService.changeLoad.next(true)
     this.notificationApi
       .getNotifications(ENotificationType.Action, this.pageSize, this.actionNotificationsNextPage)
       .subscribe(
@@ -53,6 +57,7 @@ export class HomeComponent implements OnInit {
         },
         () => {
           this.actionNotificationsFetchStatus = 'error'
+          this.loadService.changeLoad.next(false)
         },
       )
   }
@@ -70,9 +75,11 @@ export class HomeComponent implements OnInit {
           this.infoNotifications = this.infoNotifications.concat(notifications.data)
           this.infoNotificationsNextPage = notifications.page
           this.infoNotificationsFetchStatus = 'done'
+          this.loadService.changeLoad.next(false)
         },
         () => {
           this.infoNotificationsFetchStatus = 'error'
+          this.loadService.changeLoad.next(false)
         },
       )
   }
@@ -83,7 +90,7 @@ export class HomeComponent implements OnInit {
         .updateNotificationSeenStatus(notification.notificationId, notification.classifiedAs)
         .subscribe(() => {
           notification.seen = true
-        },         noop)
+        }, noop)
     }
 
     this.notificationSvc.mapRoute(notification)

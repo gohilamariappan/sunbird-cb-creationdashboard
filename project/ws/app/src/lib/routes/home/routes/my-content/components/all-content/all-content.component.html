@@ -170,8 +170,14 @@
           <button mat-raised-button [color]="'primary'" (click)="loadMore()" i18n>Load More...</button>
         </div>
         <div class="flat-no-data-alert margin-m" *ngIf="!fetchError && cardContent && !cardContent.length">
-          <mat-icon class="large-icon">info</mat-icon>
-          <span class="font-weight-bold margin-left-s mat-h3 margin-remove-bottom" i18n>No data found</span>
+          <div class="margin-xl text-center">
+            <img wsUtilsImageResponsive alt="No results" class="margin-top-l margin-bottom-s"
+              src="/assets/common/error-pages/empty_search.svg">
+            <h2 class="mat-subheading-1 ws-mat-black60-text">No CBP(s) found</h2>
+            <!-- <h3 class="mat-body-1">
+              Try removing the filters or search using different keywords
+            </h3> -->
+          </div>
         </div>
         <div class="flat-error-alert margin-m" *ngIf="fetchError">
           <mat-icon class="large-icon">info</mat-icon>
