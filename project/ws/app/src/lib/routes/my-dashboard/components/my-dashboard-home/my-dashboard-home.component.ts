@@ -4049,7 +4049,7 @@ export class MyDashboardHomeComponent implements OnInit {
           ],
           data: [
             {
-              headerName: 'Average content quality score',
+              headerName: 'Average CQ score',
               headerValue: 75,
               headerSymbol: 'number',
               colorPaletteCode: null,
