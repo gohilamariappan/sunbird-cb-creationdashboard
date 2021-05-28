@@ -159,7 +159,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
         vizArray: [
           {
             id: 27,
-            name: 'Platfrom usage trend',
+            name: 'Platform usage trend',
             description: 'Time spent on the platform',
             dimensions: {
               height: 250,
@@ -170,7 +170,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
             charts: [
               {
                 id: 'pltUsage',
-                name: 'Platfrom usage trend',
+                name: 'Platform usage trend',
                 code: '',
                 chartType: 'line_bar',
                 filter: '',
