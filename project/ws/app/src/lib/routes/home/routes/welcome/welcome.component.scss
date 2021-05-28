@@ -3,6 +3,13 @@
 @import 'ws-mixins';
 // @import './bootstrap-rain.css';
 
+.container-balanced {
+  @extend %page-center;
+  height: auto;
+  min-height: 75vh;
+  padding: 12px;
+}
+
 .height-50 {
   min-height: 50vh;
 }
