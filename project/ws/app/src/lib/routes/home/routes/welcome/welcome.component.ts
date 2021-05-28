@@ -11,6 +11,7 @@ import { ProfileV2Service } from '../../services/home.servive'
   selector: 'ws-app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss', './bootstrap-rain.scss'],
+  /* tslint:disable-next-line */
   encapsulation: ViewEncapsulation.None,
   /* tslint:disable */
   host: { class: 'flex flex-1' },
@@ -1098,7 +1099,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
           filter: null,
           data: [
             {
-              headerName: 'Average CQ score',
+              headerName: 'Average content quality score',
               headerValue: 75,
               headerSymbol: 'number',
               colorPaletteCode: null,

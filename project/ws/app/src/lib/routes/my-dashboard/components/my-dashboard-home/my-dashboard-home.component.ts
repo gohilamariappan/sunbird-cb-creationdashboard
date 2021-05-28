@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { Router } from '@angular/router'
 import { ConfigurationsService, NsPage } from '@sunbird-cb/utils'
 
 @Component({
   selector: 'ws-app-my-dashboard-home',
   templateUrl: './my-dashboard-home.component.html',
-  styleUrls: ['./my-dashboard-home.component.scss'],
+  styleUrls: ['./my-dashboard-home.component.scss', './bootstrap-rain.scss'],
+  /* tslint:disable-next-line */
+  encapsulation: ViewEncapsulation.None,
+  /* tslint:enable */
 })
 export class MyDashboardHomeComponent implements OnInit {
 
@@ -4049,7 +4052,7 @@ export class MyDashboardHomeComponent implements OnInit {
           ],
           data: [
             {
-              headerName: 'Average CQ score',
+              headerName: 'Average content quality score',
               headerValue: 75,
               headerSymbol: 'number',
               colorPaletteCode: null,
