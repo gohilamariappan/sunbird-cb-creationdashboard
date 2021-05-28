@@ -50,3 +50,7 @@ a {
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
+
+.min-cus-height {
+  min-height: calc(100vh - 3 * #{$mat-toolbar-gt-xs});
+}
