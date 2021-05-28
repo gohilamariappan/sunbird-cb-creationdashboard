@@ -4,9 +4,6 @@
 
 .container-balanced {
   @extend %page-center;
-  height: auto;
-  min-height: 75vh;
-  padding: 12px;
 }
 
 .center {
