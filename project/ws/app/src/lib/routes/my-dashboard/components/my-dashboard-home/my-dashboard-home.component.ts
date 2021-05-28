@@ -1174,7 +1174,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 58,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1269,7 +1269,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 45,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1364,7 +1364,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 32,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1459,7 +1459,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 30,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1554,7 +1554,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 16,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1649,7 +1649,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 15,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1744,7 +1744,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 11,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1839,7 +1839,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 10,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -1934,7 +1934,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 7,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2029,7 +2029,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Position with <1 role',
+                  name: 'Position with ≤ 1 role',
                   value: 0,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2155,7 +2155,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 33,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2262,7 +2262,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 22,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2369,7 +2369,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 21,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2476,7 +2476,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 18,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2583,7 +2583,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 16,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2690,7 +2690,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 12,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2797,7 +2797,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 4,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -2904,7 +2904,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 0,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -3011,7 +3011,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 0,
                   valueLabel: 'Value',
                   symbol: 'number',
@@ -3118,7 +3118,7 @@ export class MyDashboardHomeComponent implements OnInit {
                 },
                 {
                   label: 'Header',
-                  name: 'Role with <1 activity',
+                  name: 'Role with ≤ 1 activity',
                   value: 0,
                   valueLabel: 'Value',
                   symbol: 'number',
