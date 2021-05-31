@@ -60,6 +60,10 @@ const routes: Routes = [
         path: 'directory',
         component: DirectoryViewComponent,
       },
+      {
+        path: 'approvals',
+        component: ComingSoonComponent,
+      },
       // {
       //   path: ':department/create-department',
       //   component: CreateMdoComponent,
