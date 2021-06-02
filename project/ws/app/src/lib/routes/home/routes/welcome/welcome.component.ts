@@ -57,9 +57,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     widgetTitle: 'This month so far',
     showWidgetTitle: 'true',
     showMessage: true,
-    messageType: "warning",
+    messageType: 'warning',
     message:
-      "Please note that the data shown here is not actual and is only intended to showcase the capability of the platform until the actual usage begins.",
+      'Please note that the data shown here is not actual and is only intended to showcase the capability of the platform until the actual usage begins.',
     visualizationDetails: [
       {
         row: 1,
