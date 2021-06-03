@@ -67,8 +67,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
         vizArray: [
           {
             id: 23,
-            name: 'Status of work allocation orders(top 5)',
-            description: 'Percentage of approved work allocation orders by MDO',
+            name: "Status of work allocation orders (top 5)",
+            description: "Percentage of approved work allocation orders by MDO",
             dimensions: {
               height: 250,
               width: 6,
@@ -78,7 +78,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
             charts: [
               {
                 id: 'topWAT',
-                name: 'Status of work allocation orders(top 5)',
+                name: 'Status of work allocation orders (top 5)',
                 code: '',
                 chartType: 'table-bar',
                 filter: '',
@@ -88,8 +88,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
           },
           {
             id: 24,
-            name: 'Status of work allocation orders(bottom 5)',
-            description: 'Percentage of approved work allocation orders by MDO',
+            name: "Status of work allocation orders (bottom 5)",
+            description: "Percentage of approved work allocation orders by MDO",
             dimensions: {
               height: 250,
               width: 6,
@@ -99,7 +99,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
             charts: [
               {
                 id: 'btmpWAT',
-                name: 'Status of work allocation orders(bottom 5)',
+                name: 'Status of work allocation orders (bottom 5)',
                 code: '',
                 chartType: 'table-bar',
                 filter: '',
