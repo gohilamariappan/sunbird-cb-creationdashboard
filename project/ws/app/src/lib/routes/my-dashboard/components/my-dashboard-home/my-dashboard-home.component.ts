@@ -47,11 +47,11 @@ export class MyDashboardHomeComponent implements OnInit {
           id: 'piaaCq',
         },
         {
-          name: 'WPCAs',
+          name: 'WPCAS',
           id: 'wpca',
         },
         {
-          name: 'Competency Change',
+          name: 'Competency change',
           id: 'compeChange',
         },
         {
@@ -92,8 +92,8 @@ export class MyDashboardHomeComponent implements OnInit {
         vizArray: [
           {
             id: 11,
-            name: 'Status of work allocation order (Top 5)',
-            description: 'Percentage of approved work allocation order by MDO',
+            name: 'Status of work allocation orders (top 5)',
+            description: 'Percentage of approved work allocation orders by MDO',
             dimensions: {
               height: 250,
               width: 6,
@@ -104,8 +104,7 @@ export class MyDashboardHomeComponent implements OnInit {
             charts: [
               {
                 id: 'watTopFive',
-                name: 'Status of work allocation order (Top 5)',
-
+                name: 'Status of work allocation orders (top 5)',
                 code: '',
                 chartType: 'table-bar',
                 filter: '',
@@ -115,8 +114,8 @@ export class MyDashboardHomeComponent implements OnInit {
           },
           {
             id: 12,
-            name: 'Status of work allocation orders (Bottom 5)',
-            description: 'Percentage of approved work allocation order by MDO',
+            name: 'Status of work allocation orders (bottom 5)',
+            description: 'Percentage of approved work allocation orders by MDO',
             dimensions: {
               height: 250,
               width: 6,
@@ -126,8 +125,7 @@ export class MyDashboardHomeComponent implements OnInit {
             charts: [
               {
                 id: 'watBtmFive',
-                name: 'Status of work allocation orders (Bottom 5)',
-
+                name: 'Status of work allocation orders (bottom 5)',
                 code: '',
                 chartType: 'table-bar',
                 filter: '',
@@ -407,7 +405,7 @@ export class MyDashboardHomeComponent implements OnInit {
               isDecimal: null,
             },
             {
-              headerName: 'Work allocation completed',
+              headerName: 'Work allocation orders approved',
               headerValue: 309,
               headerSymbol: 'number',
               colorPaletteCode: '#7B47A4',
@@ -558,7 +556,7 @@ export class MyDashboardHomeComponent implements OnInit {
               isDecimal: null,
             },
             {
-              headerName: 'Work allocation completed',
+              headerName: 'Work allocation orders approved',
               headerValue: 92,
               headerSymbol: 'number',
               colorPaletteCode: '#F3457E',
