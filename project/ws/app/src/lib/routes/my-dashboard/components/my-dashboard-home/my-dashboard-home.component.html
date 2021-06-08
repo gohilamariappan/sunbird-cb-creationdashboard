@@ -17,6 +17,6 @@
     [widgetData]="currentDashboard[0].widgetData" (libDashboardId)="getDashboardId($event)"
     [showWidgetTitle]="currentDashboard[0].showWidgetTitle" [widgetTitle]="currentDashboard[0].widgetTitle"
     [showMessage]="currentDashboard[0].showMessage" [messageType]="currentDashboard[0].messageType"
-    [message]="currentDashboard[0].message">
+    [message]="currentDashboard[0].message" (libDateFilterPreset)="getDateFilterPreset($event)">
   </lib-rain-dashboards>
 </div>
